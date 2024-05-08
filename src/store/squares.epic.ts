@@ -15,13 +15,12 @@ constructor(
     private _requestPostService: RequestPostsService
     ) {}
 
-  public loadUnitList$ = createEffect(() => {
+  public fetchInitPosts$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(ActionTypes.FETCH_INIT_POSTS),
       mergeMap(() => {
         return this._requestPostService.fetchPosts().pipe(
           map((response: any[]) => {
-            // FetchInitPostsSuccess();
             return new FetchInitPostsSuccess(response);
           }),
           catchError((error) => of(new FetchInitPostsError(error)))

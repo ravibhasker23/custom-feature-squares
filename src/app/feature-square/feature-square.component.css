@@ -1,7 +1,4 @@
-.icons{
-    font-size: 25px;
-    margin-right: 10px;
-}
+
 
 .margin{
     margin-left: 10px;
@@ -14,17 +11,21 @@
     overflow: hidden;
 }
 
+.color-red{
+    color: #ff0000;
+    margin-bottom: 5px;
+}
+
 .border-red{
-    border: 2px solid #ff0000;
+    border-top: 2px solid #dee2e6;
+    border-left: 2px solid #dee2e6;
+    border-right: 2px solid #dee2e6;
+    border-bottom: 4px solid #c81212;
     width: 100px;
     height: 100px;
     overflow: hidden;
 }
 
-.color-red{
-    color: #ff0000;
-    margin-bottom: 5px;
-}
 
 .clickable-margin{
     cursor: pointer;
@@ -40,6 +41,7 @@
 
 .font-size{
     font-size: 12px;
+    font-weight: 700;
 }
 
 

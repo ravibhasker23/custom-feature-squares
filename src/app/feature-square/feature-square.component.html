@@ -1,44 +1,32 @@
 
+<main>
+<div class="row">
+    <div class="col-md-8">
+        <!-- Display the current active post start -->
+        <span class="col-md-8 margin font-size">Active post:</span>
+        <span class="col-md-8 margin-left font-size color-red">{{ currentActivePost > 0 ? currentActivePost : '' }}</span>
+        <!-- Display the current active post end -->
+    </div>
+</div>
+<!-- Display the squares divided into 10 rows and 10 columns start -->
+    <div class="container">
+        <div class="row" *ngFor="let post of (posts$ | async).posts; let i = index">
+            <ng-container *ngFor="let childPosts of post;let j = index">
+                <div
+                [ngClass]="selectedIndex.toString() === (i + 1) + '.' + (j + 1) 
+                ? 'col-sm border-red clickable-margin scroll'
+                : 'col-sm border clickable-margin scroll'"
+                [id]="(i + 1) + '.' + (j + 1)"
+                (click)="onTogglePostData(childPosts, (i + 1) + '.' + (j + 1))">
+                    <ng-container *ngIf="selectedIndex.toString() === (i + 1) + '.' + (j + 1)">
+                        {{ (activePost$ | async)?.posts?.activePost[selectedIndex] ? selectedValue : '' }}
+                    </ng-container>
+                    <ng-container *ngIf="selectedIndex.toString() !== (i + 1) + '.' + (j + 1)">
+                        {{ childPosts.title}}
+                    </ng-container>
+                </div>
+            </ng-container>
 
-
-  <div class="col-lg-11 mx-auto p-4 py-md-5">
-    <header class="d-flex align-items-center border-bottom">
-      <span class="d-flex align-items-center text-body-emphasis text-decoration-none">
-        <i class="bi bi-stickies-fill icons"></i>
-        <span class="fs-2">Selectable Squares</span>
-        <span class="fs-1 color-red">.</span>
-      </span>
-    </header>
-    <p class="fs-6 col-md-8 margin">Click any square to see more details.</p>
-
-
-    <main>
-    <div class="row">
-        <div class="col-md-8">
-            <span class="col-md-8 margin font-size">Active post:</span>
-            <span class="col-md-8 margin-left font-size color-red">{{ currentActivePost > 0 ? currentActivePost : '' }}</span>
         </div>
     </div>
-      <div class="container">
-        <div class="row" *ngFor="let post of (posts$ | async).posts; let i = index">
-          <ng-container *ngFor="let childPosts of post;let j = index">
-            <div
-            [ngClass]="selectedIndex.toString() === (i + 1) + '.' + (j + 1) 
-            ? 'col-sm border-red clickable-margin scroll'
-            : 'col-sm border clickable-margin scroll'"
-            [id]="(i + 1) + '.' + (j + 1)"
-            (click)="onTogglePostData(childPosts, (i + 1) + '.' + (j + 1))">
-            <ng-container *ngIf="selectedIndex.toString() === (i + 1) + '.' + (j + 1)">
-                {{ (activePost$ | async)?.posts?.activePost[selectedIndex] ? selectedValue : '' }}
-            </ng-container>
-            <ng-container *ngIf="selectedIndex.toString() !== (i + 1) + '.' + (j + 1)">
-                {{ childPosts.title}}
-            </ng-container>
-            </div>
-          </ng-container>
-
-        </div>
-      </div>
-    </main>
-
-  </div>
+</main>

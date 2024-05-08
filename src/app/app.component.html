@@ -1,3 +1,19 @@
 
-<app-feature-square></app-feature-square>
+<!-- Heading and subtitle of the page -->
+<div class="col-lg-11 mx-auto p-4 py-md-5">
+  <header class="d-flex align-items-center border-bottom">
+    <span class="d-flex align-items-center text-body-emphasis text-decoration-none">
+      <i class="bi bi-stickies-fill icons"></i>
+      <span class="fs-2">Selectable Squares</span>
+      <span class="fs-1 color-red">.</span>
+    </span>
+  </header>
+  <p class="font-size ol-md-8 margin">Click multiple times on a post for <i>toggling</i> and to see more details such as <i>Id, UserId, Body</i>. By Default the <i>title</i> is
+    displayed initially. Selecting any other post will reset the previous selection.
+  </p>
+
+  <!-- Square component for creating 10 x 10 posts -->
+    <app-feature-square></app-feature-square>
+</div>
+
 <router-outlet />

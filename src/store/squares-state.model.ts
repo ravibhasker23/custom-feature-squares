@@ -8,7 +8,6 @@ export interface IPostState {
     activePost: any | null;
 }
 
-
 export interface IPost {
     userId: number;
     id: number;

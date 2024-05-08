@@ -11,8 +11,10 @@ import { DOCUMENT } from '@angular/common';
   styleUrl: './feature-square.component.css'
 })
 export class FeatureSquareComponent{
+  //select for fetching the posts data from the API
   posts$ = this.store.select(postsSelector);
 
+  //select for fetching the current active post selected by the user
   activePost$ = this.store.select(activePostSelector);
   
   currentActivePost: number = 0;
@@ -29,18 +31,23 @@ export class FeatureSquareComponent{
   }
 
 
+  /**
+   * Fetching the current index selected and dispatching an action to keep the current selection in store.
+   * @param selectedPost selected post by the user
+   * @param currentIndex current index selected: combination of the row + column value; for e.g. row 1 and column 2 equals 1.2
+   */
   onTogglePostData(selectedPost: any, currentIndex: any){
     if(this.selectedIndex === currentIndex){
       this.clicks++;
         switch (this.clicks) {
           case 1:
-            this.selectedValue = selectedPost.id;
+            this.selectedValue = 'User Id: ' + selectedPost.userId;
             break;
           case 2:
-            this.selectedValue = selectedPost.body;
+            this.selectedValue = 'Id: ' + selectedPost.id;
             break;
           case 3:
-              this.selectedValue = selectedPost.userId;
+              this.selectedValue = 'Body: ' +selectedPost.body;
           break;
           case 4:
             this.selectedValue = selectedPost.title;
@@ -58,7 +65,7 @@ export class FeatureSquareComponent{
 
       this.clicks++;
 
-      this.selectedValue = selectedPost.id;
+      this.selectedValue = 'User Id: ' + selectedPost.userId;
     }
 
   }

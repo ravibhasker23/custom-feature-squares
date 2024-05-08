@@ -11,6 +11,7 @@ export class RequestPostsService {
 
   constructor(private httpClient: HttpClient) { }
 
+  // Service to fetch the posts
   public fetchPosts(): Observable<any>{
     return this.httpClient.get(this.path, {})
     .pipe(map((res: any) => {

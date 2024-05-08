@@ -1,5 +1,4 @@
-import { createAction, props } from '@ngrx/store';
-import { IAction, IPostState } from './squares-state.model';
+import { IAction } from './squares-state.model';
 
 export enum ActionTypes {
     FETCH_INIT_POSTS = '[POSTS] Fetch init posts data',
@@ -10,21 +9,24 @@ export enum ActionTypes {
 }
 
 export class FetchInitPosts implements IAction {
+    //Initial call for fetching the posts linked with a side effect fetchInitPosts$
     readonly type: ActionTypes = ActionTypes.FETCH_INIT_POSTS;
 }
 
 export class FetchInitPostsSuccess implements IAction {
+    // Action for on completion of fetching the API data
     readonly type: ActionTypes = ActionTypes.FETCH_INIT_POSTS_SUCCESS;
     constructor(public payload: any){}
 }
 
 export class FetchInitPostsError implements IAction {
+    // Action for on error of fetching the API data
     readonly type: ActionTypes = ActionTypes.FETCH_INIT_POSTS_ERROR;
     constructor(public payload: any){}
 }
 
 export class SetCurrentActivePost implements IAction {
-    
+    // Action for on storing the current active post in state
     readonly type: ActionTypes = ActionTypes.SET_CURRENT_ACTIVE_POST;
     constructor(public payload: { index: string, post: any}){
     }
