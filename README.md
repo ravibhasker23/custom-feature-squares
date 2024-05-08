@@ -1,4 +1,4 @@
-# Custom feature squares
+# Selectable squares
 
 Angular application to fetch 100 posts and render it for performing the following actions:
  - Show title by default.
