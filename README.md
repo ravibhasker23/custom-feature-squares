@@ -4,7 +4,7 @@ Angular application to fetch 100 posts and render it for performing the followin
  - Show title by default.
  - Clickable squares and reset any selected squares.
  - Only one square is to be selected at a time.
- - app folder contains the app module and square component.
+ - src folders contains the app module, service, store and the square component.
 
 
 ## Cloning, registry and installing dependencies
