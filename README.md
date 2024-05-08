@@ -5,6 +5,8 @@ Angular application to fetch 100 posts and render it for performing the followin
  - Clickable squares and reset any selected squares.
  - Only one square is to be selected at a time.
  - src folders contains the app module, service, store and the square component.
+ - Used @ngrx/store and @ngrx/effects for state management
+ - Used bootstrap for grid layout and bootstrap-icons for displaying icons
 
 
 ## Cloning, registry and installing dependencies
@@ -15,11 +17,6 @@ Angular application to fetch 100 posts and render it for performing the followin
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
 
 ## Assignment questions
 
