@@ -51,6 +51,7 @@ Example of an immutable object:
 - On creating a variable with some value and then creating another new variable and assigning the old variable to it will create a new space in the memory with the value of the old variable.
 
 Pros and cons of immutability:
+
 Pros:
  - Helps in simplifying the development and it will represent the exact state present in memory.
  - Code is more efficient and safer.
